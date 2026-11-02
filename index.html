@@ -1,181 +1,117 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Jaroslav Galadik Data Analyst Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jaroslav Galadik – Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --ink:#13202E; --muted:#556575; --line:#D5DCE3; --accent:#0B6E6E; --accent-ink:#FFFFFF;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif; --body:"Public Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0F1923;--surface:#17232F;--ink:#E8EEF3;--muted:#9AABBB;--line:#2A3A49;--accent:#4FD1C5;--accent-ink:#0F1923;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0F1923;--surface:#17232F;--ink:#E8EEF3;--muted:#9AABBB;--line:#2A3A49;--accent:#4FD1C5;--accent-ink:#0F1923;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0}
+header.top b{font:700 1.1rem var(--display)}
+nav a{margin-left:1.4rem;color:var(--ink);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
+.hero{padding:4rem 0 3.5rem;border-bottom:1px solid var(--line)}
+.hero h1{font:700 clamp(2.4rem,6.5vw,4.6rem)/1.04 var(--display);letter-spacing:-.02em;margin:0 0 1.5rem;max-width:16ch}
+.hero p{max-width:40rem;color:var(--muted);font-size:1.2rem;margin:0 0 2rem}
+.btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.8rem 1.4rem;border-radius:.4rem;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.p{background:var(--accent);color:var(--accent-ink)}
+.btn.s{color:var(--accent)}
+section{padding:3.5rem 0;border-bottom:1px solid var(--line)}
+h2{font:700 1.9rem/1.2 var(--display);margin:0 0 .5rem}
+.lead{color:var(--muted);max-width:38rem;margin:0 0 2rem}
+.proj{display:grid;grid-template-columns:1fr auto;gap:.4rem 2rem;padding:1.4rem 0;border-top:1px solid var(--line)}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj h3{font:600 1.25rem var(--display);margin:0}
+.proj p{margin:.2rem 0 0;color:var(--muted);max-width:40rem}
+.tools{color:var(--ink);font-weight:500;font-size:.95rem}
+.proj .go{align-self:center;font-weight:600}
+.tl{list-style:none;margin:0;padding:0 0 0 1.4rem;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 2rem}
+.tl li::before{content:"";position:absolute;left:calc(-1.4rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.tl h3{font:600 1.2rem var(--display);margin:0}
+.tl .meta{color:var(--muted);font-size:.95rem;margin:.1rem 0 .5rem}
+.tl p{margin:0;max-width:40rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem}
+.cols h3{font:600 1.1rem var(--display);margin:0 0 .6rem}
+.cols ul{margin:0;padding:0;list-style:none}
+.cols li{padding:.3rem 0;border-bottom:1px solid var(--line)}
+footer{padding:3rem 0 4rem}
+footer a{font-weight:600}
+.small{color:var(--muted);font-size:.9rem}
+@media (max-width:40rem){.proj{grid-template-columns:1fr}nav a{margin-left:.9rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><b>Jaroslav Galadik</b>
+<nav aria-label="Main"><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav></header>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+<main>
+<div class="hero">
+  <h1>I turn billing and procurement data into decisions.</h1>
+  <p>Data analyst based in Bratislava, working remotely. I build SQL, Power BI and Tableau reports, and automate the manual steps behind invoicing and purchasing, so teams spend less time fixing errors and more time acting on the numbers.</p>
+  <div class="btns"><a class="btn p" href="#work">See my projects</a><a class="btn s" href="mailto:jaro.galadik@gmail.com">Email me</a></div>
+</div>
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Jaroslav Galadik<br />
-						Data Analyst Portfolio</h1>
-						<p>Welcome to My Data Analytics Portfolio </p>
-						<ul class="actions special">
-							<li><a href="https://github.com/Dzefro/Certificates" class="button large">Data Analyst Certificates (Google, Analyst_Builder)</a></li>
-						</ul>
-						<p>Explore My Work in SQL, Tableau, Excel, Power BI, and Python  </p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+<section id="work">
+  <h2>Projects</h2>
+  <p class="lead">Each project is on GitHub with its data and files.</p>
+  <div class="proj"><div><h3>Bank loan report</h3><p>A report on key loan metrics and how they change over time, to track portfolio health and spot trends that inform lending.</p><span class="tools">SQL, Tableau</span></div><a class="go" href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P1%20%28SQL_Tableau%29%20Bank_Loan_Report.rar">Open project</a></div>
+  <div class="proj"><div><h3>Coffee shop sales</h3><p>Analysis of customer purchases, peak sales periods and product performance in one Power BI report.</p><span class="tools">SQL, Power BI</span></div><a class="go" href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P2%20%28SQL_PowerBI%29%20Coffee%20Shop%20Sales.rar">Open project</a></div>
+  <div class="proj"><div><h3>SQL projects</h3><p>Queries and data management exercises.</p></div><a class="go" href="https://github.com/Dzefro/SQL-Projects">Open on GitHub</a></div>
+  <div class="proj"><div><h3>Power BI projects</h3><p>Business intelligence dashboards.</p></div><a class="go" href="https://github.com/Dzefro/PowerBI-Projects">Open on GitHub</a></div>
+  <div class="proj"><div><h3>Tableau projects</h3><p>Interactive dashboards.</p></div><a class="go" href="https://github.com/Dzefro/Tableu-Projects">Open on GitHub</a></div>
+  <div class="proj"><div><h3>Excel and Python projects</h3><p>Spreadsheet analysis, plus Python for cleaning data and automating processes.</p></div><a class="go" href="https://github.com/Dzefro/Python-Projects">Open Python repo</a></div>
+</section>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo"></a>
-					</header>
+<section id="experience">
+  <h2>Experience</h2>
+  <p class="lead">Seven years of hands-on work with finance and supply data.</p>
+  <ul class="tl">
+    <li><h3>Business Support Specialist, Covestro</h3><div class="meta">Bratislava, March 2025 to now</div><p>Keep invoices for the Global Sideline Business team processed and released on time. Analyze billing data to find where the process can improve, and design automated solutions that cut errors and speed up invoicing.</p></li>
+    <li><h3>Buyer Indirect, Fleet Management, Yanfeng</h3><div class="meta">December 2020 to February 2025</div><p>Managed a fleet of 500 company cars across Europe. Tracked automotive and procurement market trends, built visualizations and presentations from the data, and kept records of procurement and transport costs.</p></li>
+    <li><h3>Support, Classic STR (family business)</h3><div class="meta">Serbia, 2014 to now</div><p>Ongoing support for the family business.</p></li>
+  </ul>
+</section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-						</ul>
-						<ul class="icons"
-						<li><a href="https://www.linkedin.com/in/jaroslav-galadik-7a2211274/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-						<li><a href="https://github.com/Dzefro" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+<section id="skills">
+  <h2>Skills</h2>
+  <p class="lead">Grouped by how I use them today.</p>
+  <div class="cols">
+    <div><h3>Daily work</h3><ul><li>SQL</li><li>Power BI</li><li>Tableau</li><li>Microsoft Office, advanced</li></ul></div>
+    <div><h3>Growing</h3><ul><li>Python and pandas</li><li>R</li><li>Microsoft Azure</li><li>Statistics and A/B testing</li></ul></div>
+    <div><h3>Also</h3><ul><li>WordPress and SEO</li><li>English (C1), Slovak and Serbian (C2)</li><li>Google Data Analytics Certificate</li><li>Analyst Builder Certificate</li></ul></div>
+  </div>
+</section>
+</main>
 
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P1%20(SQL_Tableau)%20Bank_Loan_Report.rar">PortFolio Project<br />
-									Bank Loans (SQL,Tableau) </a></h2>
-									<p>Creation of a comprehensive Bank Loan Report. This report aims to provide insights into key loan-related metrics and their changes over time. The report helped us make data-driven decisions, track loan portfolio's health, and identify trends that can inform lending strategies.</p>
-								</header>
-								<a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P1%20(SQL_Tableau)%20Bank_Loan_Report.rar" class="image main"><img src="images/AA1.webp" width="300" 
-									height="500" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P1%20(SQL_Tableau)%20Bank_Loan_Report.rar" class="button large">VIEW PROJECT</a></li>
-								</ul>
-							</article>
-
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P1%20(SQL_Tableau)%20Bank_Loan_Report.rar">PortFolio Project<br />
-									Coffee Shop Sales (SQL,PowerBI) </a></h2>
-									<p>Creation of a comprehensive Coffe Shop Sales report. This project leverages Power BI and SQL to analyze sales data from a coffee shop, identifying key trends in customer purchases, peak sales periods, and product performance.</p>
-								</header>
-								<a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P2%20(SQL_PowerBI)%20Coffee%20Shop%20Sales.rar" class="image main"><img src="images/C1.JPG" width="300" 
-									height="500" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/Dzefro/Data-Analyst-PortFolio-Projects/blob/main/P2%20(SQL_PowerBI)%20Coffee%20Shop%20Sales.rar" class="button large">VIEW PROJECT</a></li>
-								</ul>
-							</article>
-
-
-
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<h2><a href="https://github.com/Dzefro/SQL-Projects">SQL Projects<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Dzefro/SQL-Projects" class="image fit"><img src="images/AA2.png" width="100" 
-										height="200" alt="" /></a>
-									<p> This holds all of my SQL Projects - Mastering Data with Queries and Efficient Data Management </p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Dzefro/SQL-Projects" class="button">VIEW PROJECTS</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/Dzefro/PowerBI-Projects"> Power BI Projects <br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Dzefro/PowerBI-Projects" class="image fit"><img src="images/AA3.png"  width="100" 
-										height="200" alt="" /></a>
-									<p> This holds all of my Power BI Projects - Building Powerful Business Intelligence Solutions.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Dzefro/PowerBI-Projects" class="button">VIEW PROJECTS</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/Dzefro/Tableu-Projects">Tableau Projects<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Dzefro/Tableu-Projects" class="image fit"><img src="images/AA6.webp"  width="100" 
-										height="200" alt="" /></a>
-									<p> This holds all of my Tableau Projects - Visualizing Insights with Interactive Dashboards </p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Dzefro/Tableu-Projects" class="button">VIEW PROJECTS</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-								
-										<h2><a href="https://github.com/Dzefro/Excel-Projects">Excel Projects<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Dzefro/Excel-Projects" class="image fit"><img src="images/AA4.jpg"  width="100" 
-										height="200" alt="" /></a>
-									<p> This holds all of my Excel Projects - Leveraging Spreadsheets for Data Analysis.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Dzefro/Excel-Projects" class="button">VIEW PROJECTS</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/Dzefro/Python-Projects"> Python Projects <br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/Dzefro/Python-Projects" class="image fit"><img src="images/AA5.png"  width="100" 
-										height="200" alt="" /></a>
-									<p> This holds all of my Python Projects - Automating Processes and Unlocking Advanced Data Analytics</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/Dzefro/Python-Projects" class="button">VIEW PROJECTS</a></li>
-									</ul>
-								</article>
-							</section>
-
-			
-
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p>
-								Bratislava (SK), Novi Sad (SRB) </p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">jaro.galadik@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/jaroslav-galadik-7a2211274/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-									<li><a href="https://github.com/Dzefro" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<footer id="contact">
+  <h2>Contact</h2>
+  <p class="lead">Open to remote full-time, part-time and contract roles.</p>
+  <p><a href="mailto:jaro.galadik@gmail.com">jaro.galadik@gmail.com</a><br>
+  <a href="https://www.linkedin.com/in/jaroslav-galadik-7a2211274/">LinkedIn</a> and <a href="https://github.com/Dzefro">GitHub</a><br>
+  <a href="https://github.com/Dzefro/Certificates">Certificates</a></p>
+  <p class="small">Bratislava, Slovakia</p>
+</footer>
+</div>
+</body>
 </html>
